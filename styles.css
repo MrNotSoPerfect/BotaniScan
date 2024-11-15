@@ -1,0 +1,105 @@
+.header {
+    background-color: #1abc9c;
+    text-align: center;
+
+    h1 {
+        font-size: 70px;
+        font-family: klavika-bold;
+    }
+
+    p {
+        font-size: 40px;
+        font-family: Oxygen-Bold;
+    }
+
+    padding: 20px;
+    font-family: klavika-bold;
+}
+
+@font-face {
+    font-family: klavika-bold;
+    src: url(Klavika-Bold/klavika-bold.otf);
+}
+
+@font-face {
+    font-family: Oxygen-Regular;
+    src:url(Oxygen/Oxygen-Regular.ttf)
+}
+
+@font-face {
+    font-family: Oxygen-Bold;
+    src:url(Oxygen/Oxygen-Bold.ttf)
+}
+
+.button {
+    background-color: #64af69;
+    border: none;
+    color: black;
+    width: 40%;
+    height: 100px;
+    text-align: center;
+    font-size: 40px;
+    margin: 30% 30%;
+    transition: 0.1s;
+    font-family: Oxygen-Regular;
+    margin-top: 50px; 
+    margin-bottom: 10px; 
+    border-radius: 12px;
+}
+
+.button:hover {
+    background-color: #004204;
+    color: white;
+    font-family: Oxygen-Bold;
+}
+
+.footer {
+    h2 {
+        font-size: 40px;
+        margin-top: 50px; 
+        margin-bottom: 10px; 
+        font-family: Oxygen-Bold;
+    }
+
+    p {
+        font-size: 30px;
+        margin-top: 10px; 
+        margin-bottom: 20px; 
+        font-family: Oxygen-Regular;
+    }
+
+    ul {
+        font-size: 20px;
+        font-family: Oxygen-Regular;
+    }
+}
+
+.IndexHeader {
+    background-color: #1abc9c;
+    text-align: center;
+
+    h1 {
+        font-size: 90px;
+        font-family: klavika-bold;
+        margin-top: 40px;
+        margin-bottom: 15px
+    }
+
+    p {
+        font-size: 40px;
+        font-family: Oxygen-Bold;
+        margin-top: 10px;
+        margin-bottom: 20px
+    }
+
+    padding: 20px;
+    font-family: klavika-bold;
+}
+
+.IndexBody {
+
+    ul {
+        font-size: 30px;
+        font-family: Oxygen-Regular;
+    }
+}
