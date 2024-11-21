@@ -10,7 +10,7 @@
 
 <body>
     <link rel="stylesheet" href="styles.css">
-    <button class="button" onclick="init()">Start Analysis</button>
+    <button class="button" onclick="analysis()" id="button">Start Analysis</button>
     <div id="webcam-container"></div>
     <div id="label-container"></div>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
@@ -23,7 +23,10 @@
         const URL = "https://teachablemachine.withgoogle.com/models/Uxfjbda6J/";
 
         let model, webcam, labelContainer, maxPredictions;
-
+        function analysis() {
+            init();
+            const ButtonTimeout = setTimeout(ClearButton, 1000);
+        }
         // Load the image model and setup the webcam
         async function init() {
             const modelURL = URL + "model.json";
@@ -67,6 +70,11 @@
                 labelContainer.childNodes[i].innerHTML = classPrediction;
             }
         }
+
+        function ClearButton() {
+            document.getElementById("button").style.display = "none"; 
+        }
+
     </script>
 </body>
 
@@ -75,10 +83,10 @@
     <h2> Index </h2>
     <p> Click on a choice below to visit all the information</p>
         <ul>
-            <li><a href=index.html>Index</a></li>
+            <li><a href=index.html>BotaniScan Home</a></li>
             <li><a href=BotaniScan-GeneralIdentificationTeachableMachineFile.html>General Fruit & Vegetable Identification</a></li>
-            <li><a href=BotaniscanWebsite-Strawberry.html>Strawberry Identification</a></li>
-            <li><a href=BotaniScanWebsite-Tomato.html>Tomato Identification</a></li>
+            <li><a href=BotaniscanWebsite-Strawberry.html>Strawberry Disease Identification</a></li>
+            <li><a href=BotaniScanWebsite-Tomato.html>Tomato Disease Identification</a></li>
         </ul>
     <br />
     <hr />
