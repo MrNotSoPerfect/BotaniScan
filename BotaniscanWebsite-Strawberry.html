@@ -3,16 +3,18 @@
 <head>
 <title>BotaniScan</title>
 <div class="header">
-    <h1>Strawberry Identification AI Model</h1>
+    <h1>Strawberry Disease Identification AI Model</h1>
     <p>Welcome to BotaniScan (Powered By: Teachable Machine®️)</p>
 </div>
 </head>
 
 <body>
     <link rel="stylesheet" href="styles.css">
-    <button class="button" onclick="init()">Start Analysis</button>
-    <div id="webcam-container"></div>
-    <div id="label-container"></div>
+    
+    <div class= "Results" >
+        <div class = "webcam-container" id="webcam-container"></div>
+        <p class = "label-container" id="label-container"></p>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
     <script type="text/javascript">
@@ -23,7 +25,10 @@
         const URL = "https://teachablemachine.withgoogle.com/models/EbjsG6sTh/";
 
         let model, webcam, labelContainer, maxPredictions;
-
+        function analysis() {
+            init();
+            const ButtonTimeout = setTimeout(ClearButton, 1000);
+        }
         // Load the image model and setup the webcam
         async function init() {
             const modelURL = URL + "model.json";
@@ -47,7 +52,7 @@
             document.getElementById("webcam-container").appendChild(webcam.canvas);
             labelContainer = document.getElementById("label-container");
             for (let i = 0; i < maxPredictions; i++) { // and class labels
-                labelContainer.appendChild(document.createElement("div"));
+                labelContainer.appendChild(document.createElement("p"));
             }
         }
 
@@ -67,18 +72,24 @@
                 labelContainer.childNodes[i].innerHTML = classPrediction;
             }
         }
+
+        function ClearButton() {
+            document.getElementById("button").style.display = "none"; 
+        }
+
     </script>
 </body>
 
 <footer>
 <div class="footer">
+    <button class="button" onclick="analysis()" id="button">Start Analysis</button>
     <h2> Index </h2>
     <p> Click on a choice below to visit all the information</p>
         <ul>
-            <li><a href=index.html>Index</a></li>
+            <li><a href=index.html>BotaniScan Home</a></li>
             <li><a href=BotaniScan-GeneralIdentificationTeachableMachineFile.html>General Fruit & Vegetable Identification</a></li>
-            <li><a href=BotaniscanWebsite-Strawberry.html>Strawberry Identification</a></li>
-            <li><a href=BotaniScanWebsite-Tomato.html>Tomato Identification</a></li>
+            <li><a href=BotaniscanWebsite-Strawberry.html>Strawberry Disease Identification</a></li>
+            <li><a href=BotaniScanWebsite-Tomato.html>Tomato Disease Identification</a></li>
         </ul>
     <br />
     <hr />

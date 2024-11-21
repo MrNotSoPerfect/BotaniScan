@@ -3,11 +3,11 @@
 <head>
 <title>BotaniScan</title>
 <div class="header">
-    <h1>Tomato Identification AI Model</h1>
+    <h1>Tomato Disease Identification AI Model</h1>
     <p>Welcome to BotaniScan (Powered By: Teachable Machine®️)</p>
 </div>
 <link rel="stylesheet" href="styles.css">
-<button class="button" onclick="init()">Start Analysis</button>
+<button class="button" onclick="analysis()" id="button">Start Analysis</button>
 </head>
 
 <body>
@@ -23,7 +23,10 @@
         const URL = "https://teachablemachine.withgoogle.com/models/9ukucY7h1/";
 
         let model, webcam, labelContainer, maxPredictions;
-
+        function analysis() {
+            init();
+            const ButtonTimeout = setTimeout(ClearButton, 1000);
+        }
         // Load the image model and setup the webcam
         async function init() {
             const modelURL = URL + "model.json";
@@ -67,6 +70,10 @@
                 labelContainer.childNodes[i].innerHTML = classPrediction;
             }
         }
+
+        function ClearButton() {
+            document.getElementById("button").style.display = "none"; 
+        }
     </script>
 </body>
 <footer>
@@ -74,10 +81,10 @@
     <h2> Index </h2>
     <p> Click on a choice below to visit all the information</p>
         <ul>
-            <li><a href=index.html>Index</a></li>
+            <li><a href=index.html>BotaniScan Home</a></li>
             <li><a href=BotaniScan-GeneralIdentificationTeachableMachineFile.html>General Fruit & Vegetable Identification</a></li>
-            <li><a href=BotaniscanWebsite-Strawberry.html>Strawberry Identification</a></li>
-            <li><a href=BotaniScanWebsite-Tomato.html>Tomato Identification</a></li>
+            <li><a href=BotaniscanWebsite-Strawberry.html>Strawberry Disease Identification</a></li>
+            <li><a href=BotaniScanWebsite-Tomato.html>Tomato Disease Identification</a></li>
         </ul>
     <br />
     <hr />
