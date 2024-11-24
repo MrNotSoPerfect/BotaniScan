@@ -6,13 +6,17 @@
     <h1>Tomato Disease Identification AI Model</h1>
     <p>Welcome to BotaniScan (Powered By: Teachable Machine®️)</p>
 </div>
-<link rel="stylesheet" href="styles.css">
-<button class="button" onclick="analysis()" id="button">Start Analysis</button>
+
+
 </head>
 
 <body>
-    <div id="webcam-container"></div>
-    <div id="label-container"></div>
+    <link rel="stylesheet" href="styles.css">
+
+    <div class= "Results" >
+        <div class = "webcam-container" id="webcam-container"></div>
+        <p class = "label-container" id="label-container"></p>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
     <script type="text/javascript">
@@ -50,7 +54,7 @@
             document.getElementById("webcam-container").appendChild(webcam.canvas);
             labelContainer = document.getElementById("label-container");
             for (let i = 0; i < maxPredictions; i++) { // and class labels
-                labelContainer.appendChild(document.createElement("div"));
+                labelContainer.appendChild(document.createElement("p"));
             }
         }
 
@@ -78,6 +82,7 @@
 </body>
 <footer>
 <div class="footer">
+    \<button class="button" onclick="analysis()" id="button">Start Analysis</button>
     <h2> Index </h2>
     <p> Click on a choice below to visit all the information</p>
         <ul>
