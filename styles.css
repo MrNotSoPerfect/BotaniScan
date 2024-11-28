@@ -77,7 +77,7 @@
 }
 
 .IndexHeader {
-    background-color: #26891f;
+    background-color: #6c9a80;
     text-align: center;
 
     h1 {
@@ -124,7 +124,7 @@
    
 .Results > p {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     font-size: x-large;
     color: white;
     font-family: Oxygen-Regular;
@@ -132,4 +132,14 @@
     text-align: end;
     justify-content: flex-end;
     flex-wrap: wrap;
+    grid-gap: 15px;
+}
+
+.Results > p > span {
+    border: 3px solid rgba(255, 255, 255, 0.8);
+    width: 245px;
+    height: 70px;
+    padding: 20px;
+    text-align: center;
+    align-items: center;
 }
